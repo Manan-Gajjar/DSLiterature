@@ -2,3 +2,4 @@ ipykernel==6.20.0
 pandas==1.5.2
 plotly
 nbformat
+nbconvert
