@@ -34,4 +34,4 @@ def plot_linear_plot(x, y, y_pred):
         # paper_bgcolor="Black",
     )
 
-    return fig
+    return fig.show()
