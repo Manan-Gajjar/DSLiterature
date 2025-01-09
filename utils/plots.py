@@ -1,5 +1,8 @@
 import plotly.express as px
 import plotly.graph_objects as go
+import plotly.io as pio
+pio.renderers.keys()
+pio.renderers.default = 'notebook' 
 
 
 def plot_linear_plot(x, y, y_pred):
