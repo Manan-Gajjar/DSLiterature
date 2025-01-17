@@ -5,7 +5,7 @@ pio.renderers.keys()
 pio.renderers.default = 'notebook' 
 
 
-def plot_linear_plot(x, y, y_pred):
+def linear_plot(x, y, y_pred):
 
     connecting_line = []
 
@@ -35,6 +35,29 @@ def plot_linear_plot(x, y, y_pred):
         height=400,
         template="plotly_dark"
         # paper_bgcolor="Black",
+    )
+
+    return fig
+
+
+def scatter_plot(data1, x1, y1, data2=None, x2=None, y2=None):
+    scatter1 = go.Scatter(x=data1[x1], y=data1[y1], mode="markers", name="Data1")
+    fig = go.Figure(data=[scatter1])
+
+    if data2 is not None:
+        scatter2 = go.Scatter(x=data2[x2], y=data2[y2], mode="markers", name="Data2")
+        fig.add_trace(scatter2)
+
+    fig.update_layout(
+        showlegend=True,
+        xaxis_title=x1,
+        yaxis_title=y1,
+        title=f"{x1} vs {y1}",
+        margin=dict(l=0, r=0),
+        autosize=False,
+        width=800,
+        height=600,
+        template="plotly_dark"
     )
 
     return fig
